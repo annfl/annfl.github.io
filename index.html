@@ -101,7 +101,7 @@
               <div class="card-body">
                 <h5 class="card-title">Jennie</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Visit</a>
+                <a href="https://www.instagram.com/jennierubyjane/" class="btn btn-primary" target="_blank">Visit</a>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@
               <div class="card-body">
                 <h5 class="card-title">Jisoo</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Visit</a>
+                <a href="https://www.instagram.com/sooyaaa__/" class="btn btn-primary" target="_blank">Visit</a>
               </div>
             </div>
           </div>
@@ -121,7 +121,7 @@
               <div class="card-body">
                 <h5 class="card-title">Lisa</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Visit</a>
+                <a href="https://www.instagram.com/lalalalisa_m" class="btn btn-primary" target="_blank">Visit</a>
               </div>
             </div>
           </div>
@@ -131,7 +131,7 @@
               <div class="card-body">
                 <h5 class="card-title">Rose</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Visit</a>
+                <a href="https://www.instagram.com/roses_are_rosie/" class="btn btn-primary" target="_blank">Visit</a>
               </div>
             </div>
           </div>
@@ -141,12 +141,46 @@
               <div class="card-body">
                 <h5 class="card-title">Ryujin</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Visit</a>
+                <a href="https://www.instagram.com/ryujin__itzy/" class="btn btn-primary" target="_blank">Visit</a>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- My Cats -->
+      <section id="my-cats">
+        <div class="container">
+          <div class="row text-center mb-3">
+            <div class="col">
+              <h2>My Cats</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-4 mb-3">
+              <div class="cat-box">
+                <h4 class="cat-name">Boma</h4>
+                <img src="img/cats/cat2.png" alt="Boma" class="cat-img" />
+                <a href="https://www.instagram.com/flan1tsb0ma/" class="btn btn-light cat-detail-button" target="_blank">Show Details</a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-3">
+              <div class="cat-box">
+                <h4 class="cat-name">Bomba</h4>
+                <img src="img/cats/cat1.png" alt="Bomba" class="cat-img" />
+                <a href="https://www.instagram.com/flan1tsb0ma/" class="btn btn-light cat-detail-button" target="_blank">Show Details</a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-3">
+              <div class="cat-box">
+                <h4 class="cat-name">Bombi</h4>
+                <img src="img/cats/cat3.png" alt="Bombi" class="cat-img" />
+                <a href="https://www.instagram.com/flan1tsb0ma/" class="btn btn-light cat-detail-button" target="_blank">Show Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -156,9 +190,11 @@
       </svg>
     </section>
 
+    <!-- Akhir My Cats -->
+
     <!-- Akhir Projects -->
 
-    <section id="gallery">
+    <!-- <section id="gallery">
       <div class="container">
         <div class="row text-center">
           <div class="col">
@@ -223,7 +259,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Contact -->
     <section id="contact">
@@ -272,7 +308,7 @@
     <!-- Akhir contact -->
 
     <!-- Footer -->
-    <footer class="bg-primary text-white text-center pb-3">
+    <footer class="bg-primary text-white text-center pb-5">
       <p>Created with <i class="bi bi-heart-fill text-danger"></i> by <a href="http://instagram.com/an_nfl" target="_blank" class="text-white fw-bold">Aan Annaufal</a></p>
     </footer>
     <!-- Akhir Footer -->\
@@ -331,6 +367,14 @@
       gsap.from('.jumbotron img', { duration: 1, rotateY: 360, opacity: 0 });
       gsap.from('.navbar', { duration: 1.5, y: '-100%', opacity: 0, ease: 'bounce' });
       gsap.from('.display-4', { duration: 1, x: -50, opacity: 0, delay: 0.5, ease: 'back' });
+    </script>
+    <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelectorAll('.cat-box'), {
+        max: 25,
+        speed: 1000,
+        glare: true,
+      });
     </script>
   </body>
 </html>
