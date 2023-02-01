@@ -166,20 +166,28 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <form>
+            <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+              <strong>Terimakasih!</strong> Pesanmu sudah terkirim.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <form name="portfolio-contact-form">
               <div class="mb-3">
                 <label for="Name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="Name" aria-describedby="Name" />
+                <input type="text" class="form-control" id="Name" aria-describedby="Name" name="nama" />
               </div>
               <div class="mb-3">
                 <label for="Email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" />
+                <input type="email" class="form-control" id="email" name="email" />
               </div>
               <div class="mb-3">
-                <label for="Pesan" class="form-label">Pesan</label>
-                <textarea class="form-control" id="Pesan" rows="3"></textarea>
+                <label for="Pesan" class="form-label">Message</label>
+                <textarea class="form-control" id="Pesan" rows="3" name="pesan"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Send</button>
+              <button type="submit" class="btn btn-primary btn-send">Send</button>
+              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
             </form>
           </div>
         </div>
@@ -199,6 +207,34 @@
       <p>Created with <i class="bi bi-heart-fill text-danger"></i> by <a href="http://instagram.com/an_nfl" target="_blank" class="text-white fw-bold">Aan Annaufal</a></p>
     </footer>
     <!-- Akhir Footer -->\
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbylDr8Q1KD6kCmDkDu5D2FqtTOBIRq2k5qQ1msf2sd_HRXcukI7exepIZ_Z_PSw9-qQ/exec';
+      const form = document.forms['portfolio-contact-form'];
+      const btnSend = document.querySelector('.btn-send');
+      const btnLoading = document.querySelector('.btn-loading');
+      const myAlert = document.querySelector('.my-alert');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // tampilkan tombol loading, hilangkan tombol send
+        btnLoading.classList.toggle('d-none');
+        btnSend.classList.toggle('d-none');
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then((response) => {
+            // tampilkan tombol kirim, hilangkan tombol loading
+            btnLoading.classList.toggle('d-none');
+            btnSend.classList.toggle('d-none');
+            // tampilkan tombol alert
+            myAlert.classList.toggle('d-none');
+            // reset form
+            form.reset();
+            console.log('Success!', response);
+          })
+          .catch((error) => console.error('Error!', error.message));
+      });
+    </script>
   </body>
 </html>
